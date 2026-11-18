@@ -1,0 +1,36 @@
+{
+  "name": "retryflow-lite",
+  "version": "1.0.0",
+  "description": "A lightweight, zero-dependency retry utility for Node.js with backoff, timeouts, and cancellation.",
+  "keywords": ["retry", "backoff", "exponential-backoff", "jitter", "timeout", "abort", "resilience"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Suryaadypu/NPM-Package.git",
+    "directory": "packages/retryflow"
+  },
+  "homepage": "https://github.com/Suryaadypu/NPM-Package",
+  "bugs": { "url": "https://github.com/Suryaadypu/NPM-Package/issues" },
+  "engines": { "node": ">=18" },
+  "main": "./index.cjs",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./index.d.mts",
+        "default": "./index.mjs"
+      },
+      "require": {
+        "types": "./index.d.cts",
+        "default": "./index.cjs"
+      }
+    }
+  },
+  "files": ["index.cjs", "index.mjs", "index.d.ts", "index.d.mts", "index.d.cts", "README.md", "LICENSE", "CHANGELOG.md", "examples/"],
+  "scripts": {
+    "test": "node --test test/*.test.cjs test/*.test.mjs",
+    "test:types": "tsc --noEmit --strict --target ES2022 --module NodeNext --moduleResolution NodeNext test/types.mts test/types.cts"
+  },
+  "devDependencies": { "typescript": "^5.8.3" }
+}
